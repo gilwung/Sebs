@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+ body {
+    margin: 0 auto; /* 좌우 여백을 자동으로 조절하여 가운데 정렬합니다. */
+    max-width: 1200px; /* 최대 너비를 설정합니다. 필요에 따라 조절하세요. */
+    padding: 0 20px; /* 좌우 여백을 추가합니다. */
+}
+   
+    /* 로그인 폼 가운데 정렬 */
+.login-form {
+    text-align: center;
+    margin-top: 50px; /* 상단 여백을 조절하여 가운데 정렬 위치를 조정하세요 */
+}
+
+.login-form form {
+    display: inline-block;
+    text-align: left;
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* 회원가입 버튼과 로그인 폼 사이의 간격을 조정하세요 */
+}
+.login-form #signup-link a {
+    color: #ffffff; /* 텍스트 색상을 하얀색으로 변경 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.login-form #signup-link a:hover {
+    text-decoration: underline; /* 마우스를 올렸을 때 밑줄 추가 */
+}
+
+
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <h1>SEB♩S</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="genre.html">장르</a></li>
+                <li><a href="#">뉴스</a></li>
+                <li><a href="#">리뷰</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">문의</a></li>
+                <li><a href="#">장터</a></li>
+                <li><a href="login.html">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-form">
+            <h2>로그인</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="username">아이디: &nbsp;&nbsp;</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">로그인</button>
+            </form>
+            <p id="signup-link">아직 회원이 아니라면 <a href="signup.html">'회원가입'</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SEB♩S </p>
+    </footer>
+
+    <script>
+        // 회원가입 링크 클릭 시 이벤트 처리
+        document.getElementById("signup-link").addEventListener("click", function(event) {
+            event.preventDefault(); // 기본 이벤트 동작 방지
+            window.location.href = "signup.html"; // 회원가입 페이지로 이동
+        });
+    </script>
+</body>
+</html>
