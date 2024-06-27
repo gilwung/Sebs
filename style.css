@@ -43,43 +43,41 @@ main {
 }
 
 .hero {
-    background-color: #1f1f1f;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-.latest-news, .reviews {
-    margin-top: 20px;
+.slider {
+    position: relative;
+    width: 100%;
 }
 
-.news-item, .review-item {
-    background-color: #1f1f1f;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-}
-
-.genre-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.genre-item {
-    background-color: #1f1f1f;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    flex: 1 1 calc(25% - 20px);
-    box-sizing: border-box;
-    text-align: center;
+.slide {
+    display: none;
+    width: 100%;
 }
 
 footer {
     background-color: #1f1f1f;
     text-align: center;
-    padding: 0;
-    position: relative;
-    width: 1;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
     bottom: 0;
+}
+
+.latest-news, .reviews {
+    margin-top: 20px;
+}
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo a:hover,
+.logo a:focus,
+.logo a:visited,
+.logo a:active {
+    color: #ffffff;
+    text-decoration: none;
 }
