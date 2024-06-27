@@ -5,31 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEB♩S</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            min-height: 100vh; /* Ensures the main content covers the full viewport height */
+            padding-bottom: 50px; /* Space for the footer */
+        }
+
+        .hero {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: none; /* Hide all slides initially */
+        }
+
+        .slide iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .slider-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .slider-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .latest-news, .reviews {
+            margin-top: 20px;
+        }
+
+        /* Ensures footer is at the bottom */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+    </style>
 </head>
-<style>
-    body {
-    margin: 0 auto; 
-    max-width: 1200px; 
-    padding: 0 20px; 
-}
-
-    .slide img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 300px; 
-}
-
-
-</style>
-    
-
 <body>
-    
-
     <header>
         <div class="logo">
-            <h1>SEB♩S</h1>
+            <a href="index.html"><h1>SEB♩S</h1></a>
         </div>
         <nav>
             <ul>
@@ -46,15 +145,23 @@
     </header>
     <main>
         <section class="hero">
-            <div class="slider">
-                <div class="slide"><img src="./img/SEBS.jpg" alt="Image 1"></div>
-                
-                
-                
+            <div class="slider-controls">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
             </div>
-            
+            <div class="slider">
+                <div class="slide">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/S3wH92v3A3k?si=R2FSNZ7ybDQ5JyH_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="slide">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ygmwOraoC8s?si=r4E_wVBvUmjatMbF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="slide">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kF8z4fO22z0?si=1Vs_TCfjvJFqIjm1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
         </section>
-        
+
         <section class="latest-news">
             <h3>최신뉴스</h3>
             <div class="news-item">
@@ -66,18 +173,45 @@
                 <p>뉴스내용 요약</p>
             </div>
         </section>
+
         <section class="reviews">
             <h3>인기리뷰</h3>
             <div class="review-item">
-                <h4>(장르이름) 리뷰 제목</h4>
-                <h4>(장르이름) 리뷰 제목</h4>
-                <h4>(장르이름) 리뷰 제목</h4>
-                <h4>(장르이름) 리뷰 제목</h4>
+                <h4>리뷰 제목</h4>
+                <p>내용요약</p>
+            </div>
+            <div class="review-item">
+                <h4>리뷰 제목</h4>
+                <p>내용요약</p>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 SEB♩S </p>
+        <p>&copy; 2024 SEB♩S</p>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function changeSlide(direction) {
+            slideIndex += direction;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            showSlide(slideIndex);
+        }
+
+       
+        showSlide(slideIndex);
+    </script>
 </body>
 </html>
